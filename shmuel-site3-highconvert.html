@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kabbalah 1 com Shmuel Lemle — 8 Aulas que Transformam</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0a0e;
+  --surface:#161320;
+  --cream:#f5f0e8;
+  --warm:#f0e8d8;
+  --gold:#d4a017;
+  --gold-l:#f0c040;
+  --gold-d:#8a6508;
+  --rust:#c04020;
+  --sage:#28503a;
+  --mist:#8a8070;
+  --mist-l:#c0b8a8;
+  --glow:rgba(212,160,23,.15);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'Space Grotesk',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* ── TICKER ── */
+.ticker{background:var(--gold);padding:.55rem 0;overflow:hidden;position:relative;z-index:600}
+.ticker-track{display:flex;gap:4rem;animation:ticker 22s linear infinite;width:max-content}
+.ticker-item{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);white-space:nowrap}
+.ticker-sep{color:rgba(12,10,14,.4)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:500;background:rgba(12,10,14,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,160,23,.15);padding:1rem 4rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.logo-shin{font-size:2rem;color:var(--gold);font-family:'Fraunces',serif;font-style:italic;font-weight:900}
+.logo-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--cream)}
+.nav-r{display:flex;align-items:center;gap:1.5rem}
+.nav-r a{color:var(--mist-l);text-decoration:none;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s}
+.nav-r a:hover{color:var(--gold)}
+.pulse-btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--bg);padding:.65rem 1.8rem;font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;position:relative;animation:pulsate 2.5s ease-in-out infinite}
+@keyframes pulsate{0%,100%{box-shadow:0 0 0 0 rgba(212,160,23,.5)}50%{box-shadow:0 0 0 8px rgba(212,160,23,0)}}
+.pulse-btn:hover{background:var(--gold-l)}
+
+/* ── HERO — FULL BLEED SPLIT ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-img-col{position:relative}
+.hero-img-col img{width:100%;height:100%;min-height:100vh;object-fit:cover;object-position:center 15%;display:block;filter:saturate(.85) contrast(1.1)}
+.hero-img-col::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(12,10,14,.6) 0%,transparent 50%),linear-gradient(to top,rgba(12,10,14,.8) 0%,transparent 40%)}
+.hero-floating-card{position:absolute;bottom:3rem;left:2rem;right:2rem;background:rgba(12,10,14,.85);backdrop-filter:blur(12px);border:1px solid rgba(212,160,23,.25);padding:2rem;z-index:2}
+.hfc-label{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.hfc-quote{font-family:'Fraunces',serif;font-size:1.1rem;font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:.8rem}
+.hfc-sig{font-size:.72rem;color:var(--mist-l)}
+.hero-text-col{padding:6rem 5rem;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,var(--bg) 0%,var(--surface) 100%);position:relative;overflow:hidden}
+.hero-text-col::before{content:'ש';position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:'Fraunces',serif;font-size:28rem;font-weight:900;font-style:italic;color:rgba(212,160,23,.04);line-height:1;pointer-events:none}
+.hero-kicker{display:inline-flex;align-items:center;gap:.6rem;background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.2);color:var(--gold-l);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;padding:.45rem 1rem;border-radius:100px;margin-bottom:2.5rem;width:fit-content;animation:riseIn 1s ease .1s both}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(3rem,4.5vw,5rem);font-weight:900;line-height:1.05;letter-spacing:-.03em;animation:riseIn 1s ease .25s both}
+.hero h1 .italic{font-style:italic;color:var(--gold)}
+.hero h1 .line3{display:block;font-size:.7em;font-weight:300;color:var(--mist-l);margin-top:.2rem;letter-spacing:.02em}
+.hero-sub{font-size:1rem;color:var(--mist-l);line-height:1.85;max-width:440px;margin:2rem 0 3rem;animation:riseIn 1s ease .4s both}
+.hero-ctas{display:flex;flex-direction:column;gap:1rem;animation:riseIn 1s ease .55s both}
+.btn-hero-main{display:flex;align-items:center;justify-content:space-between;background:var(--gold);color:var(--bg);padding:1.3rem 2rem;font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;transition:background .3s,transform .2s;max-width:380px}
+.btn-hero-main:hover{background:var(--gold-l);transform:translateY(-2px)}
+.btn-hero-main span{font-size:1.2rem}
+.btn-hero-sec{display:flex;align-items:center;gap:.6rem;color:var(--mist-l);font-size:.82rem;text-decoration:none;letter-spacing:.08em;transition:color .3s;padding:.5rem 0;border:none;background:none;cursor:pointer;width:fit-content}
+.btn-hero-sec:hover{color:var(--gold)}
+.btn-hero-sec .arr{font-size:1rem;transition:transform .3s}
+.btn-hero-sec:hover .arr{transform:translateX(4px)}
+.trust-row{display:flex;gap:2.5rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(212,160,23,.1);animation:riseIn 1s ease .7s both;flex-wrap:wrap}
+.trust-num{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;color:var(--gold);line-height:1;display:block}
+.trust-label{font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mist);margin-top:.2rem}
+
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* ── PAIN POINTS ── */
+#dor{padding:8rem 4rem;background:var(--surface)}
+.dor-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}
+.dor-text .eyebrow{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem}
+.dor-text .eyebrow::before{content:'';width:28px;height:2px;background:var(--gold)}
+.dor-h2{font-family:'Fraunces',serif;font-size:clamp(2.5rem,3.5vw,3.5rem);font-weight:900;line-height:1.1;margin-bottom:2rem}
+.dor-h2 em{font-style:italic;color:var(--gold)}
+.dor-text p{font-size:.98rem;color:var(--mist-l);line-height:1.9;margin-bottom:1rem}
+.pain-list{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.pain-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem;background:rgba(192,64,32,.06);border-left:3px solid var(--rust);transition:background .3s}
+.pain-item:hover{background:rgba(192,64,32,.1)}
+.pain-icon{font-size:1.1rem;flex-shrink:0;margin-top:.1rem}
+.pain-text{font-size:.93rem;color:var(--mist-l);line-height:1.6}
+.pain-text strong{color:var(--cream);font-weight:500}
+.dor-photo{position:relative}
+.dor-photo img{width:100%;height:540px;object-fit:cover;object-position:top;display:block;border:1px solid rgba(212,160,23,.15)}
+.dor-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,var(--surface) 100%)}
+.solution-box{position:absolute;bottom:2rem;left:2rem;right:2rem;background:var(--gold);padding:1.5rem 2rem;z-index:2}
+.solution-box p{font-family:'Fraunces',serif;font-size:1rem;font-style:italic;color:var(--bg);line-height:1.5;font-weight:700}
+
+/* ── CURRICULUM ── */
+#curso{padding:9rem 4rem;background:var(--bg)}
+.curso-wrap{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:.8rem}
+.section-eyebrow::before{content:'';width:28px;height:2px;background:var(--gold)}
+.section-h2{font-family:'Fraunces',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:900;line-height:1.08;margin-bottom:4rem;letter-spacing:-.02em}
+.section-h2 em{font-style:italic;color:var(--gold)}
+.curriculum{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(212,160,23,.08)}
+.curriculum-item{background:var(--bg);padding:2.5rem;display:flex;gap:1.5rem;transition:background .3s;position:relative;overflow:hidden}
+.curriculum-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.curriculum-item:hover{background:var(--surface)}
+.curriculum-item:hover::after{transform:scaleX(1)}
+.ci-num{font-family:'Fraunces',serif;font-size:3.5rem;font-weight:900;font-style:italic;color:var(--gold);opacity:.15;line-height:1;flex-shrink:0;min-width:60px}
+.ci-body{}
+.ci-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;margin-bottom:.5rem;color:var(--cream)}
+.ci-desc{font-size:.86rem;color:var(--mist-l);line-height:1.7}
+
+/* ── ABOUT — CINEMATIC ── */
+#sobre{position:relative;min-height:90vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.sobre-photo{position:relative}
+.sobre-photo img{width:100%;height:100%;min-height:700px;object-fit:cover;object-position:center top;display:block;filter:contrast(1.05)}
+.sobre-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 70%,var(--bg) 100%),linear-gradient(to bottom,transparent 70%,rgba(12,10,14,.6) 100%);z-index:1}
+.sobre-content{background:var(--bg);padding:8rem 5rem;display:flex;flex-direction:column;justify-content:center;position:relative}
+.sobre-content::before{content:'';position:absolute;left:0;top:10%;bottom:10%;width:1px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
+.sobre-content p{font-size:.98rem;color:var(--mist-l);line-height:1.9;margin-bottom:1.2rem}
+.sobre-content p strong{color:var(--cream);font-weight:500}
+.sobre-bio-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin:2rem 0}
+.bio-tag{background:rgba(212,160,23,.08);border:1px solid rgba(212,160,23,.2);color:var(--gold);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 1rem}
+.social-connect{display:flex;flex-direction:column;gap:.6rem;margin-top:2.5rem}
+.sc-link{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem;background:var(--surface);border:1px solid rgba(212,160,23,.08);text-decoration:none;transition:border-color .3s,background .3s;cursor:pointer}
+.sc-link:hover{border-color:rgba(212,160,23,.3);background:rgba(212,160,23,.05)}
+.sc-left{display:flex;align-items:center;gap:.8rem}
+.sc-icon{width:34px;height:34px;border-radius:50%;background:rgba(212,160,23,.12);display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.sc-name{font-size:.88rem;color:var(--cream);font-weight:500}
+.sc-handle{font-size:.72rem;color:var(--mist);margin-top:.1rem}
+.sc-arrow{color:var(--gold);font-size:.9rem;opacity:.6;transition:opacity .3s,transform .3s}
+.sc-link:hover .sc-arrow{opacity:1;transform:translateX(4px)}
+
+/* ── URGENCY SECTION ── */
+#urgencia{padding:6rem 4rem;background:var(--gold);text-align:center;position:relative;overflow:hidden}
+#urgencia::before{content:'ש';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Fraunces',serif;font-size:20rem;font-weight:900;font-style:italic;color:rgba(12,10,14,.06);pointer-events:none}
+.urg-inner{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.urg-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(12,10,14,.6);margin-bottom:1.5rem}
+.urg-h2{font-family:'Fraunces',serif;font-size:clamp(3rem,5vw,5rem);font-weight:900;line-height:1.06;color:var(--bg);margin-bottom:1.5rem;letter-spacing:-.02em}
+.urg-h2 em{font-style:italic}
+.urg-desc{font-size:1.05rem;color:rgba(12,10,14,.7);line-height:1.8;margin-bottom:3rem}
+.urg-progress{max-width:480px;margin:0 auto 2rem;text-align:left}
+.urg-progress-label{display:flex;justify-content:space-between;font-size:.75rem;color:rgba(12,10,14,.65);letter-spacing:.1em;margin-bottom:.6rem}
+.urg-track{height:6px;background:rgba(12,10,14,.15);border-radius:3px;overflow:hidden}
+.urg-fill{height:100%;width:87%;background:var(--bg);border-radius:3px}
+.urg-cta-group{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:2rem}
+.btn-urg{display:inline-flex;align-items:center;gap:.7rem;background:var(--bg);color:var(--gold);padding:1.3rem 3.5rem;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s;width:100%;max-width:420px;justify-content:center}
+.btn-urg:hover{background:#1a1620;color:var(--gold-l)}
+.urg-assurance{font-size:.78rem;color:rgba(12,10,14,.55);letter-spacing:.08em}
+
+/* ── FAQ ── */
+#faq{padding:8rem 4rem;background:var(--surface)}
+.faq-wrap{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(212,160,23,.12);overflow:hidden}
+.faq-q{padding:1.8rem 0;display:flex;align-items:center;justify-content:space-between;cursor:pointer;gap:1rem;list-style:none}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q-text{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:var(--cream);line-height:1.3}
+.faq-icon{color:var(--gold);font-size:1.2rem;flex-shrink:0;transition:transform .3s}
+details[open] .faq-icon{transform:rotate(45deg)}
+.faq-a{padding:0 0 2rem;font-size:.95rem;color:var(--mist-l);line-height:1.85}
+
+/* ── FOOTER ── */
+footer{background:#080610;border-top:1px solid rgba(212,160,23,.1);padding:4rem;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem}
+.footer-main{}
+.footer-shin{font-family:'Fraunces',serif;font-size:5rem;font-weight:900;font-style:italic;color:var(--gold);opacity:.3;line-height:1;margin-bottom:.5rem}
+.footer-name{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--cream);margin-bottom:.8rem}
+.footer-desc{font-size:.82rem;color:var(--mist);line-height:1.7;max-width:280px}
+.footer-email{font-size:.8rem;color:var(--gold);margin-top:1rem;text-decoration:none}
+.footer-col h4{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid rgba(212,160,23,.1)}
+.footer-col a{display:block;font-size:.82rem;color:var(--mist);text-decoration:none;padding:.4rem 0;transition:color .3s;letter-spacing:.05em}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{background:#060409;padding:1.5rem 4rem;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:.7rem;color:rgba(255,255,255,.2);letter-spacing:.08em}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s ease}
+.reveal-l.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:.8rem 1.5rem}
+  .nav-r span,
+  .nav-r a:not(.pulse-btn){display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-img-col{height:50vh;min-height:300px}
+  .hero-img-col img{min-height:300px}
+  .hero-text-col{padding:4rem 1.5rem}
+  #dor{padding:5rem 1.5rem}
+  .dor-wrap{grid-template-columns:1fr;gap:3rem}
+  #curso,#urgencia,#faq{padding:6rem 1.5rem}
+  .curriculum{grid-template-columns:1fr}
+  #sobre{grid-template-columns:1fr}
+  .sobre-photo{height:400px}
+  .sobre-photo img{min-height:400px}
+  .sobre-content{padding:4rem 1.5rem}
+  footer{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem}
+  .footer-bottom{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center}
+  .ticker-track{animation-duration:12s}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">✦ Kabbalah para vida real</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">25 anos de experiência</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">70K seguidores</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">+5.000 alunos transformados</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">✦ Vagas limitadas</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">Kabbalah para vida real</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">25 anos de experiência</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">70K seguidores</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">+5.000 alunos transformados</span>
+    <span class="ticker-sep">·</span>
+    <span class="ticker-item">✦ Vagas limitadas</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <span class="logo-shin">ש</span>
+    <span class="logo-name">Shmuel Lemle</span>
+  </a>
+  <div class="nav-r">
+    <a href="#curso">Programa</a>
+    <a href="#sobre">O Mestre</a>
+    <a href="#inscricao" class="pulse-btn">🌟 Inscrever-se</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img-col">
+    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-05-05_at_8_30_02_PM.jpeg" alt="Shmuel Lemle — Mestre de Kabbalah em Jerusalém">
+    <div class="hero-floating-card">
+      <div class="hfc-label">✦ Sobre Shmuel Lemle</div>
+      <p class="hfc-quote">"Há 25 anos ensinando a compreender e conduzir a vida através da Kabbalah."</p>
+      <div class="hfc-sig">@shmuel.lemle · 70K seguidores · Casa da Kabbalah</div>
+    </div>
+  </div>
+  <div class="hero-text-col">
+    <div class="hero-kicker">🔥 &nbsp; Kabbalah 1 · 8 Aulas · Vagas Abertas</div>
+    <h1>
+      A vida que<br>você merece<br>
+      <span class="italic">já existe.</span>
+      <span class="line3">Aprenda a acessá-la com Kabbalah.</span>
+    </h1>
+    <p class="hero-sub">Shmuel Lemle — Mestre de Kabbalah há 25 anos — revela em 8 aulas como superar bloqueios invisíveis, entender padrões repetitivos e viver com propósito real e abundância genuína.</p>
+    <div class="hero-ctas">
+      <a href="#inscricao" class="btn-hero-main">Garantir minha vaga <span>→</span></a>
+      <a href="#curso" class="btn-hero-sec">Ver o programa completo <span class="arr">→</span></a>
+    </div>
+    <div class="trust-row">
+      <div><span class="trust-num">25+</span><span class="trust-label">Anos ensinando</span></div>
+      <div><span class="trust-num">70K</span><span class="trust-label">Seguidores</span></div>
+      <div><span class="trust-num">5K+</span><span class="trust-label">Vidas mudadas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR / PROBLEMA -->
+<section id="dor">
+  <div class="dor-wrap">
+    <div class="dor-text reveal">
+      <div class="eyebrow">Você se reconhece aqui?</div>
+      <h2 class="dor-h2">Você conquistou muito.<br>Mas algo ainda<br><em>não encaixa.</em></h2>
+      <p>Carreira, família, conquistas — e mesmo assim uma sensação de que falta alguma coisa. Como se você estivesse vivendo a vida dos outros, e não a sua.</p>
+      <div class="pain-list">
+        <div class="pain-item">
+          <span class="pain-icon">⚡</span>
+          <p class="pain-text"><strong>Padrões que se repetem:</strong> os mesmos conflitos, os mesmos bloqueios, as mesmas escolhas.</p>
+        </div>
+        <div class="pain-item">
+          <span class="pain-icon">🌀</span>
+          <p class="pain-text"><strong>Propósito invisível:</strong> você sabe que deveria estar fazendo algo mais, mas não sabe o quê.</p>
+        </div>
+        <div class="pain-item">
+          <span class="pain-icon">🔒</span>
+          <p class="pain-text"><strong>Relacionamentos difíceis:</strong> mesmo com quem você ama, algo sempre emperra.</p>
+        </div>
+        <div class="pain-item">
+          <span class="pain-icon">💡</span>
+          <p class="pain-text"><strong>Falta de paz interior:</strong> sucesso externo, mas a cabeça não para. A ansiedade não deixa.</p>
+        </div>
+      </div>
+    </div>
+    <div class="dor-photo reveal">
+      <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-05-05_at_8_30_02_PM__1_.jpeg" alt="Shmuel Lemle em Jerusalém com visão do Domo da Rocha">
+      <div class="solution-box">
+        <p>"A Kabbalah não é religião. É uma ciência espiritual que explica os padrões da sua vida — e te ensina a mudá-los."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRÍCULO -->
+<section id="curso">
+  <div class="curso-wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Kabbalah 1 · O Programa</div>
+      <h2 class="section-h2">8 aulas que <em>mudam</em><br>a forma como você<br>vê a vida.</h2>
+    </div>
+    <div class="curriculum reveal">
+      <div class="curriculum-item">
+        <div class="ci-num">01</div>
+        <div class="ci-body">
+          <div class="ci-title">A ilusão dos cinco sentidos</div>
+          <p class="ci-desc">O jogo da vida. Como receber plenitude além das aparências que os sentidos nos mostram.</p>
+        </div>
+      </div>
+      <div class="curriculum-item">
+        <div class="ci-num">02</div>
+        <div class="ci-body">
+          <div class="ci-title">O sentido da vida</div>
+          <p class="ci-desc">Qual o propósito da existência? Comportamento proativo vs. reativo — a chave da mudança real.</p>
+        </div>
+      </div>
+      <div class="curriculum-item">
+        <div class="ci-num">03</div>
+        <div class="ci-body">
+          <div class="ci-title">O oponente — por que o mal existe</div>
+          <p class="ci-desc">Como superar os desafios com a Fórmula Proativa da Kabbalah em qualquer situação.</p>
+        </div>
+      </div>
+      <div class="curriculum-item">
+        <div class="ci-num">04</div>
+        <div class="ci-body">
+          <div class="ci-title">Resistência — gere Luz na vida</div>
+          <p class="ci-desc">A lei da resistência e como transformar escuridão em fontes de energia e crescimento.</p>
+        </div>
+      </div>
+      <div class="curriculum-item">
+        <div class="ci-num">05</div>
+        <div class="ci-body">
+          <div class="ci-title">Tikun — correção de padrões</div>
+          <p class="ci-desc">Por que situações se repetem e como mudar definitivamente o roteiro da sua vida.</p>
+        </div>
+      </div>
+      <div class="curriculum-item">
+        <div class="ci-num">06</div>
+        <div class="ci-body">
+          <div class="ci-title">O poder do compartilhar</div>
+          <p class="ci-desc">A lei universal que transforma escassez em abundância genuína em todas as áreas.</p>
+        </div>
+      </div>
+      <div class="curriculum-item">
+        <div class="ci-num">07</div>
+        <div class="ci-body">
+          <div class="ci-title">Injetar certeza</div>
+          <p class="ci-desc">A dúvida é a principal arma do oponente. Cultive a certeza que move montanhas.</p>
+        </div>
+      </div>
+      <div class="curriculum-item">
+        <div class="ci-num">08</div>
+        <div class="ci-body">
+          <div class="ci-title">Era de Aquário e o futuro</div>
+          <p class="ci-desc">O futuro da humanidade — e como você pode estar do lado certo da maior virada da história.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:4rem" class="reveal">
+      <a href="#inscricao" class="btn-hero-main" style="margin:0 auto">Quero começar agora <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE SHMUEL -->
+<section id="sobre">
+  <div class="sobre-photo reveal-l">
+    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-05-05_at_8_30_02_PM__2_.jpeg" alt="Shmuel Lemle ao pôr do sol no barco">
+  </div>
+  <div class="sobre-content reveal">
+    <div class="section-eyebrow">O Mestre</div>
+    <h2 class="section-h2" style="margin-bottom:2rem">Shmuel<br><em>Lemle.</em></h2>
+    <p>Formado em engenharia, Shmuel encontrou na Kabbalah não uma religião, mas uma <strong>ciência espiritual</strong> que explica o funcionamento da vida com uma clareza que nenhuma outra disciplina conseguia dar.</p>
+    <p>Com um estilo <strong>carioca, simpático e direto</strong>, ele apresenta temas profundos de forma que qualquer pessoa consegue entender — e aplicar imediatamente no dia a dia.</p>
+    <p>Já foi destaque no <strong>Programa do Jô Soares</strong>, tem <strong>70 mil seguidores</strong> no Instagram e centenas de aulas no YouTube que transformaram a vida de pessoas em todo o Brasil.</p>
+    <div class="sobre-bio-tags">
+      <span class="bio-tag">Engenheiro formado</span>
+      <span class="bio-tag">25 anos de Kabbalah</span>
+      <span class="bio-tag">Casa da Kabbalah</span>
+      <span class="bio-tag">Programa do Jô</span>
+    </div>
+    <div class="social-connect">
+      <a href="https://www.instagram.com/shmuel.lemle/" target="_blank" class="sc-link">
+        <div class="sc-left"><div class="sc-icon">📸</div><div><div class="sc-name">Instagram</div><div class="sc-handle">@shmuel.lemle · 70K seguidores</div></div></div>
+        <span class="sc-arrow">→</span>
+      </a>
+      <a href="https://www.youtube.com/@ShmuelLemle" target="_blank" class="sc-link">
+        <div class="sc-left"><div class="sc-icon">▶</div><div><div class="sc-name">YouTube</div><div class="sc-handle">@ShmuelLemle · Aulas gratuitas</div></div></div>
+        <span class="sc-arrow">→</span>
+      </a>
+      <a href="https://www.facebook.com/lemleshmuel/" target="_blank" class="sc-link">
+        <div class="sc-left"><div class="sc-icon">f</div><div><div class="sc-name">Facebook</div><div class="sc-handle">lemleshmuel · Comunidade</div></div></div>
+        <span class="sc-arrow">→</span>
+      </a>
+      <a href="https://linktr.ee/Lemle" target="_blank" class="sc-link">
+        <div class="sc-left"><div class="sc-icon">🔗</div><div><div class="sc-name">Todos os Links</div><div class="sc-handle">linktr.ee/Lemle</div></div></div>
+        <span class="sc-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- URGÊNCIA -->
+<section id="urgencia">
+  <div class="urg-inner reveal">
+    <div class="urg-label">✦ Vagas limitadas · Inscrições abertas ✦</div>
+    <h2 class="urg-h2">O momento<br>de agir é <em>agora.</em></h2>
+    <p class="urg-desc">Cada dia que passa é um dia vivendo com os mesmos padrões. O primeiro passo para mudar é tomar a decisão. Esse curso é esse primeiro passo.</p>
+    <div class="urg-progress">
+      <div class="urg-progress-label"><span>Vagas ocupadas</span><span>87%</span></div>
+      <div class="urg-track"><div class="urg-fill"></div></div>
+    </div>
+    <div class="urg-cta-group">
+      <a id="inscricao" href="https://pay.hotmart.com/P99901955W?checkoutMode=10" target="_blank" class="btn-urg">🌟 Quero garantir minha vaga — R$97</a>
+      <span class="urg-assurance">✦ Pagamento seguro · Acesso imediato ✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Dúvidas frequentes</div>
+      <h2 class="section-h2" style="font-size:clamp(2rem,3.5vw,3rem);margin-bottom:3rem">Perguntas <em>frequentes</em></h2>
+    </div>
+    <div class="reveal">
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-q-text">Preciso ter conhecimento prévio de Kabbalah?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-a">Não. O Kabbalah 1 foi desenvolvido para pessoas que estão tendo o primeiro contato com a sabedoria cabalística. Shmuel explica tudo do zero, de forma clara e acessível.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-q-text">As aulas são ao vivo ou gravadas?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-a">As aulas são transmitidas ao vivo com Shmuel, com possibilidade de perguntas e interação direta. As gravações ficam disponíveis para quem não puder assistir ao vivo.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-q-text">Este curso é religioso?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-a">Não. A Kabbalah ensinada por Shmuel Lemle é uma ciência espiritual universal, aberta a pessoas de qualquer religião, crença ou nenhuma crença. O foco é a vida prática e a transformação real.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-q-text">Como funciona o pagamento?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-a">O investimento é de R$97 por pessoa, pagamento único via Hotmart (cartão de crédito, boleto ou PIX). Após a confirmação você recebe o acesso imediatamente.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q"><span class="faq-q-text">Posso entrar em contato com Shmuel?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-a">Sim! Você pode seguir o Shmuel no Instagram <a href="https://www.instagram.com/shmuel.lemle/" target="_blank" style="color:var(--gold);text-decoration:none">@shmuel.lemle</a>, no YouTube <a href="https://www.youtube.com/@ShmuelLemle" target="_blank" style="color:var(--gold);text-decoration:none">@ShmuelLemle</a>, ou entrar em contato por email: <a href="mailto:curso@casadakabbalah.com.br" style="color:var(--gold);text-decoration:none">curso@casadakabbalah.com.br</a></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="reveal">
+  <div class="footer-main">
+    <div class="footer-shin">ש</div>
+    <div class="footer-name">Shmuel Lemle</div>
+    <p class="footer-desc">Mestre de Kabbalah há mais de 25 anos. Ensinando como compreender e conduzir a vida através dos ensinamentos milenares da Kabbalah.</p>
+    <a href="mailto:curso@casadakabbalah.com.br" class="footer-email">curso@casadakabbalah.com.br</a>
+  </div>
+  <div class="footer-col">
+    <h4>Navegação</h4>
+    <a href="#curso">O Programa</a>
+    <a href="#sobre">O Mestre</a>
+    <a href="#faq">Dúvidas</a>
+    <a href="https://pay.hotmart.com/P99901955W?checkoutMode=10" target="_blank">Inscrever-se</a>
+  </div>
+  <div class="footer-col">
+    <h4>Redes Sociais</h4>
+    <a href="https://www.instagram.com/shmuel.lemle/" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/@ShmuelLemle" target="_blank">YouTube</a>
+    <a href="https://www.facebook.com/lemleshmuel/" target="_blank">Facebook</a>
+    <a href="https://linktr.ee/Lemle" target="_blank">Todos os links</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-copy">© 2025 Shmuel Lemle · Casa da Kabbalah · Todos os direitos reservados</span>
+  <span class="footer-copy">Transformando vidas há 25 anos ✦</span>
+</div>
+
+<script>
+// Reveal
+const els=document.querySelectorAll('.reveal, .reveal-l');
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.1});
+els.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
